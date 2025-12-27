@@ -1,43 +1,178 @@
+/* Reset & Base Styles */
+* { box-sizing: border-box; }
+
 body {
-    background-color: #FDFBF7; /* 미묘한 Bone Color */
-    color: #111;
-    font-family: 'Cormorant Garamond', serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    background-color: #FDFBF7; /* Bone Color */
+    color: #1C1C1C; /* Ink Black */
+    font-family: 'Inter', sans-serif; /* 본문은 깔끔한 산세리프 */
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 60px 20px;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Container: A4 용지 비율과 유사한 중앙 정렬 */
+.resume-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Typography & Links */
+h1, h2, h3 {
+    font-family: 'Cormorant Garamond', serif; /* 헤드라인은 우아한 세리프 */
+    font-weight: 600;
+    color: #000;
     margin: 0;
 }
 
-.card-container {
-    width: 600px; /* 명함 비율을 웹에 맞게 조정 */
-    padding: 80px;
-    background-color: #FDFBF7;
-    /* 아주 미세한 그림자로 종이가 떠있는 느낌 구현 */
-    box-shadow: 0 20px 50px rgba(0,0,0,0.05); 
-    text-align: center;
-    border: 1px solid #EAEAEA; /* 아주 얇은 테두리 */
+a {
+    color: #1C1C1C;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.2s ease;
 }
 
-h1 {
-    font-weight: 500;
-    font-size: 2.5rem;
-    letter-spacing: 0.15em; /* 자간을 넓혀 고급스럽게 */
+a:hover {
+    border-bottom: 1px solid #1C1C1C;
+}
+
+/* Header */
+header {
+    text-align: left;
+    margin-bottom: 60px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #1C1C1C; /* 강렬한 구분선 */
+}
+
+.name {
+    font-size: 3.5rem;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
+    line-height: 1;
     margin-bottom: 10px;
 }
 
-.subtitle {
-    font-size: 0.9rem;
-    color: #555;
-    letter-spacing: 0.1em;
-    margin-top: 0;
+.role {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-style: italic;
+    color: #444;
+    margin-bottom: 20px;
 }
 
-.divider {
-    border: 0;
-    height: 1px;
-    background: #333;
-    width: 40px; /* 짧고 굵은 선 */
-    margin: 30px auto;
+.contact-info {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.separator {
+    margin: 0 8px;
+    color: #ccc;
+}
+
+/* Sections */
+section {
+    margin-bottom: 50px;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-bottom: 1px solid #E0E0E0; /* 얇고 은은한 구분선 */
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+/* Job & Project Entries */
+.job-entry, .project-entry {
+    margin-bottom: 30px;
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 5px;
+}
+
+.job-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.job-date {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.company {
+    font-weight: 500;
+    margin: 0 0 10px 0;
+}
+
+.job-details {
+    list-style-type: none; /* 기본 불릿 제거 */
+    padding: 0;
+    margin: 0;
+}
+
+.job-details li {
+    position: relative;
+    padding-left: 15px;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+/* 커스텀 불릿 포인트: 작은 사각형 */
+.job-details li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 3px;
+    height: 3px;
+    background-color: #1C1C1C;
+}
+
+.tech-stack {
+    font-size: 0.85rem;
+    color: #666;
+    margin: -5px 0 8px 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.skill-category {
+    display: flex;
+    flex-direction: column;
+}
+
+.skill-label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+}
+
+.skill-list {
+    color: #444;
+    font-size: 0.9rem;
+}
+
+/* Mobile Response */
+@media (max-width: 600px) {
+    .resume-container { padding: 0 10px; }
+    .name { font-size: 2.5rem; }
+    .job-header { flex-direction: column; }
+    .job-date { margin-top: 2px; }
 }
