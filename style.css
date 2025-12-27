@@ -1,0 +1,43 @@
+body {
+    background-color: #FDFBF7; /* 미묘한 Bone Color */
+    color: #111;
+    font-family: 'Cormorant Garamond', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.card-container {
+    width: 600px; /* 명함 비율을 웹에 맞게 조정 */
+    padding: 80px;
+    background-color: #FDFBF7;
+    /* 아주 미세한 그림자로 종이가 떠있는 느낌 구현 */
+    box-shadow: 0 20px 50px rgba(0,0,0,0.05); 
+    text-align: center;
+    border: 1px solid #EAEAEA; /* 아주 얇은 테두리 */
+}
+
+h1 {
+    font-weight: 500;
+    font-size: 2.5rem;
+    letter-spacing: 0.15em; /* 자간을 넓혀 고급스럽게 */
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: #555;
+    letter-spacing: 0.1em;
+    margin-top: 0;
+}
+
+.divider {
+    border: 0;
+    height: 1px;
+    background: #333;
+    width: 40px; /* 짧고 굵은 선 */
+    margin: 30px auto;
+}
